@@ -1,10 +1,12 @@
-Office 2021
-<br>
-Method 1: Using my command line
+<h2>Office 2021</h2>
+<br><hr><br>
+
+<h3>Method 1:</h3> Using my command line
+```
 Step 1.1: Open cmd program with administrator rights.
 First, you need to open cmd in the admin mode, then run all commands below one by one.
 Step 1.2: Get into the Office directory in cmd.
-For x86 and x64
+For x86 and x64```
 cd /d %ProgramFiles(x86)%\Microsoft Office\Office16
 cd /d %ProgramFiles%\Microsoft Office\Office16
 If you install your Office in the ProgramFiles folder, the Office directory depends on the architecture of your OS. If you are not sure of this issue, just run both of the commands above. One of them will be not executed and an error message will be printed on the screen.
