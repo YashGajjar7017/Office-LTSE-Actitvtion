@@ -1,4 +1,4 @@
-#Office 2021
+Office 2021
 <br>
 Method 1: Using my command line
 Step 1.1: Open cmd program with administrator rights.
