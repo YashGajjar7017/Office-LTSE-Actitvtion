@@ -1,27 +1,31 @@
-<h2>Office 2021</h2>
-<br><hr><br>
-
-<h3>Method 1:</h3> Using my command line
+## Microsoft Office LTSE + 2023
+## Method 1: Using my command line
+### Step 1.1: Open cmd program with administrator rights.
+- First, you need to open cmd in the admin mode, then run all commands below one by one.
+### Step 1.2: Get into the Office directory in cmd.
+- For x86 and x64 
 ```
-Step 1.1: Open cmd program with administrator rights.
-First, you need to open cmd in the admin mode, then run all commands below one by one.
-Step 1.2: Get into the Office directory in cmd.
-For x86 and x64```
 cd /d %ProgramFiles(x86)%\Microsoft Office\Office16
 cd /d %ProgramFiles%\Microsoft Office\Office16
-If you install your Office in the ProgramFiles folder, the Office directory depends on the architecture of your OS. If you are not sure of this issue, just run both of the commands above. One of them will be not executed and an error message will be printed on the screen.
-Step 1.3: Install Office 2021 volume license.
+```
+- If you install your Office in the ProgramFiles folder, the Office directory depends on the architecture of your OS. If you are not sure of this issue, just run both of the commands above. One of them will be not executed and an error message will be printed on the screen.
+### Step 1.3: Install Office 2021 volume license.
+```
 for /f %x in ('dir /b ..\root\Licenses16\ProPlus2021VL_KMS*.xrm-ms') do cscript ospp.vbs /inslic:"..\root\Licenses16\%x"
-This step is required. You can not install the KMS client product key of Office without a volume license.
-Step 1.4: Activate your Office using the KMS key.
-Make sure your device is connected to the internet, then run the following commands.
+```
+- This step is required. You can not install the KMS client product key of Office without a volume license.
+### Step 1.4: Activate your Office using the KMS key.
+- Make sure your device is connected to the internet, then run the following commands.
+```
 cscript ospp.vbs /setprt:1688
 cscript ospp.vbs /unpkey:6F7TH >nul
 cscript ospp.vbs /inpkey:FXYTK-NJJ8C-GB6DW-3DYQT-6F7TH
 cscript ospp.vbs /sethst:e8.us.to
 cscript ospp.vbs /act
-If you see the error 0xC004F074, it means that your internet connection is unstable or the server is busy. Please make sure your device is online and try the command “act” again until you succeed.
-Here is all the text you will get in the command prompt window
+```
+- If you see the error `0xC004F074`, it means that your internet connection is unstable or the server is busy. Please make sure your device is online and try the command “act” again until you succeed.
+### Here is all the text you will get in the command prompt window
+```
 C:\Windows\system32>cd /d %ProgramFiles(x86)%\Microsoft Office\Office16
 The system cannot find the path specified.
 
@@ -119,10 +123,13 @@ Last 5 characters of installed product key: 6F7TH
 ---Exiting-----------------------------
 
 C:\Program Files\Microsoft Office\Office16>
-Congratulations! The activation was completed successfully.
-==========================================
-Method 2: Using my pre-written batch script
-Step 2.1: Copy the script code below into a new text document.
+```
+## Congratulations! The activation was completed successfully.
+#### ==========================================
+
+## Method 2: Using my pre-written batch script
+### Step 2.1: Copy the script code below into a new text document.
+```
 @echo off
 title Activate Microsoft Office 2021 (ALL versions) for FREE - office.com&cls&echo =====================================================================================&echo #Project: Activating Microsoft software products for FREE without additional software&echo =====================================================================================&echo.&echo #Supported products:&echo - Microsoft Office Standard 2021&echo - Microsoft Office Professional Plus 2021&echo.&echo.&(if exist "%ProgramFiles%\Microsoft Office\Office16\ospp.vbs" cd /d "%ProgramFiles%\Microsoft Office\Office16")&(if exist "%ProgramFiles(x86)%\Microsoft Office\Office16\ospp.vbs" cd /d "%ProgramFiles(x86)%\Microsoft Office\Office16")&(for /f %%x in ('dir /b ..\root\Licenses16\ProPlus2021VL_KMS*.xrm-ms') do cscript ospp.vbs /inslic:"..\root\Licenses16\%%x" >nul)&echo.&echo =====================================================================================&echo Activating your product...&cscript //nologo slmgr.vbs /ckms >nul&cscript //nologo ospp.vbs /setprt:1688 >nul&cscript //nologo ospp.vbs /unpkey:6F7TH >nul&set i=1&cscript //nologo ospp.vbs /inpkey:FXYTK-NJJ8C-GB6DW-3DYQT-6F7TH >nul||goto notsupported
 :skms
@@ -141,13 +148,15 @@ echo ===========================================================================
 echo =====================================================================================&echo.&echo Sorry, the server is busy and can't respond to your request. Please try again.&echo.
 :halt
 pause >nul
-Step 2.2: Save this text file as a cmd file. (Eg. office.cmd).
-Step 2.3: Run the cmd file in admin mode.
-Step 2.4: Check the activation status again.
-Done! Your product is activated successfully now.
-More information:
-Here is the KMS client key of Office 2021: FXYTK-NJJ8C-GB6DW-3DYQT-6F7TH.
+```
+### Step 2.2: Save this text file as a cmd file. (Eg. office.cmd).
+### Step 2.3: Run the cmd file in admin mode.
+### Step 2.4: Check the activation status again.
+## Done! Your product is activated successfully now.
 
-The Office 2021 KMS license is valid for 180 days only but it can be renewed automatically so you needn’t worry so much about the period.
+## More information:
 
-If you would have any questions or concerns, please leave your comments. I would be glad to explain in more details. Thank you so much for all your feedback and support!
+- Here is the KMS client key of Office 2021: ```FXYTK-NJJ8C-GB6DW-3DYQT-6F7TH```.
+- The Office 2021 KMS license is valid for 180 days only but it can be renewed automatically so you needn’t worry so much about the period.
+
+- If you would have any questions or concerns, please leave your comments. I would be glad to explain in more details. Thank you so much for all your feedback and support!
